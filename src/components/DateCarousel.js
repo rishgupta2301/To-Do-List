@@ -7,7 +7,6 @@ const DateCarousel = ({ selectedDate, onDateSelect }) => {
   const [dates, setDates] = useState([]);
 
   useEffect(() => {
-    // Generate dates for the current week
     const today = new Date();
     const weekDates = Array.from({ length: 7 }, (_, i) => addDays(today, i));
     setDates(weekDates);

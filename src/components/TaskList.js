@@ -1,36 +1,51 @@
 // src/components/TaskList.js
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/TaskList.css';
 
 const TaskList = ({ tasks, toggleTaskStatus, onEditTask, onDeleteTask }) => {
-  const formatDate = (date) => {
-    return date instanceof Date ? date.toLocaleDateString() : date;
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
   };
+
+  // Filter tasks based on search query
+  const filteredTasks = tasks.filter((task) =>
+    task.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <div className="task-list">
-      {tasks.map((task) => (
+    <div className="task-list-container">
+
+      {searchQuery && filteredTasks.length === 0 && (
+        <p className="no-results">No tasks found</p>
+      )}
+
+      {!searchQuery && <p className="task-header">Tasks Today</p>}
+
+      {filteredTasks.map((task) => (
         <div key={task.id} className={`task-item ${task.completed ? "completed" : ""}`}>
+          <label className="checkbox-container">
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => toggleTaskStatus(task.id)}
+            />
+            <span className="checkmark"></span>
+          </label>
+
           <div className="task-details">
             <h4 className="task-title">{task.title}</h4>
-            <p className="task-description">{task.description}</p>
-            <p className="task-date">Date: {formatDate(task.date)}</p>
-            <p className="task-time">Time: {task.time}</p>
           </div>
+
           <div className="task-actions">
-            <button
-              className={`status-btn ${task.completed ? "completed" : "incomplete"}`}
-              onClick={() => toggleTaskStatus(task.id)}
-            >
-              {task.completed ? "Completed" : "Incomplete"}
-            </button>
             <button className="edit-btn" onClick={() => onEditTask(task)}>
-            <img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new"/>
+              <img width="20" height="20" src="https://img.icons8.com/ios/50/create-new.png" alt="edit"/>
             </button>
             <button className="delete-btn" onClick={() => onDeleteTask(task.id)}>
-            <img width="20" height="20" src="https://img.icons8.com/ios/50/waste.png" alt="waste"/>
+              <img width="20" height="20" src="https://img.icons8.com/ios/50/waste.png" alt="delete"/>
             </button>
           </div>
-        {/* </div> */}
         </div>
       ))}
     </div>

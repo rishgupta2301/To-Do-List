@@ -11,7 +11,8 @@ const WeeklyProgress = () => {
 
   return (
     <div className="weekly-progress">
-      <p>Weekly Progress: {Math.round(completionPercentage)}%</p>
+      {/* <p>Weekly Progress: {Math.round(completionPercentage)}%</p> */}
+      <p>Weekly Progress</p>
       <div className="progress-bar">
         <div
           className="progress-bar-fill"

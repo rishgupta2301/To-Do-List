@@ -1,46 +1,40 @@
 /* src/styles/DateCarousel.css */
 .date-carousel {
-    display: flex;
-    overflow-x: auto;
-    padding: 1rem 0;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
-    scrollbar-width: thin;
-    scroll-behavior: smooth;
-    margin-left: 20px;
-  }
-  
-  .date-button {
-    min-width: calc(90%/7);
-    padding: 0.5rem;
-    margin: 0 0.3rem;
-    text-align: center;
-    border: none;
-    background-color: #fff;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-  }
-  
-  .date-button.selected {
-    background-color: #4caf50;
-    color: white;
-    transform: scale(1.1);
-  }
-  
-  .date-button .day {
-    font-size: 0.85rem;
-    color: #555;
-  }
-  
-  .date-button .date {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .date-button:hover {
-    background-color: #e0f7fa;
-    transform: scale(1.05);
-  }
-  
+  display: flex;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 70px !important;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.date-button {
+  min-width: 45px;
+  padding: 0.3rem;
+  margin: 0 0.3rem;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.date-button.selected {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.date-button .day {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.date-button .date {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
