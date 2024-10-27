@@ -1,0 +1,52 @@
+/* Home Page Styles */
+.home-page {
+    padding: 20px;
+  }
+  
+  /* Search Bar Styling */
+  .search-bar {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .search-button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add Task Button */
+  .add-task-btn {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 70%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-task-btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,21 @@
+.task-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+  
+  .task-item.completed {
+    text-decoration: line-through;
+  }
+  
+  .complete-toggle {
+    margin-top: 10px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

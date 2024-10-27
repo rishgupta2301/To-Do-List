@@ -1,0 +1,85 @@
+/* src/styles/TaskList.css */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-details {
+  flex: 1;
+}
+
+.task-title {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.task-description {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.task-date,
+.task-time {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.status-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.status-btn.completed {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.status-btn.incomplete {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  color: #d9534f;
+}
+
+.completed .task-title, .completed .task-description {
+  text-decoration: line-through;
+  color: #888;
+}
