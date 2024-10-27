@@ -13,19 +13,9 @@ const TaskList = ({ tasks, toggleTaskStatus, onEditTask, onDeleteTask }) => {
           <div className="task-details">
             <h4 className="task-title">{task.title}</h4>
             <p className="task-description">{task.description}</p>
-            {/* <p className="task-date">Date: {task.date}</p> */}
-            {/* <p className="task-time">Time: {task.time}</p> */}
+            <p className="task-date">Date: {formatDate(task.date)}</p>
+            <p className="task-time">Time: {task.time}</p>
           </div>
-          {/* <label>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleTaskStatus(task.id)}
-            />
-            Completed
-          </label>
-          <button onClick={() => onEditTask(task)}>Edit</button>
-          <button onClick={() => onDeleteTask(task.id)}>Delete</button> */}
           <div className="task-actions">
             <button
               className={`status-btn ${task.completed ? "completed" : "incomplete"}`}

@@ -49,4 +49,47 @@
   .add-task-btn:hover {
     background-color: #0056b3;
   }
-  
+  /* src/styles/Home.css */
+.task-summary {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 45%;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.task-box.completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.task-box.incomplete {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.task-box:hover {
+  transform: translateY(-5px);
+}
+
+.task-box h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.task-box p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
